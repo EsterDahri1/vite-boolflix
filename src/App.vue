@@ -32,7 +32,7 @@ export default {
                 <span> Titolo: {{ movie.title }}</span>
                 <span> Titolo originale: {{ movie.original_title }}</span>
                 <div v-if="this.flags.includes(movie.original_language)">
-                    Lingua: <img :src="`./assets/img/flags/${movie.original_language}.png`">
+                    Lingua: <img width="50" :src="`src/assets/img/flags/${movie.original_language}.png`">
                 </div>
                 <span v-else> Lingua: {{ movie.original_language }}</span>
 
