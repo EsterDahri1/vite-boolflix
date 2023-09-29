@@ -14,7 +14,7 @@ export default {
             this.state.fetchMovie(urlMovie)
         },
         searchTvSeries() {
-            const urlTvSeries = this.state.tvSeries + this.state.query;
+            const urlTvSeries = this.state.tv_url + this.state.query;
             this.state.fetchTvSeries(urlTvSeries)
         }
     },
@@ -26,9 +26,9 @@ export default {
     <div class="container">
         <div class="">
             <input type="search" name="search" id="searchMovie" v-model="this.state.query">
-            <button class="btn btn-primary" @click=" searchTvSeries()">Search</button>
+            <button class="btn btn-primary" @click="searchMovie && searchTvSeries()">Search</button>
         </div>
-        <!-- <ul>
+        <ul>
             <li v-for="movie in state.movies">
                 <span> Titolo: {{ movie.title }} </span>
                 <span> Titolo originale: {{ movie.original_title }}</span>
@@ -39,7 +39,7 @@ export default {
 
                 <span> Voto: {{ movie.vote_average }}</span>
             </li>
-        </ul> -->
+        </ul>
         <ul>
             <li v-for="tvSerie in state.tvSeries">
                 <span> Titolo: {{ tvSerie.name }} </span>
