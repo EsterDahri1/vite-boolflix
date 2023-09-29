@@ -7,11 +7,34 @@ export default {
             state
         }
     },
+    methods: {
+        searcMovie() {
+            const urlMovie = this.state.base_url + this.state.query;
+            this.state.fetchMovie(urlMovie)
+        }
+    }
+    // mounted(){
 
+    // }
 
 }
 </script>
 
-<template></template>
+<template>
+    <div class="container">
+        <div class="">
+            <input type="search" name="search" id="searchMovie" v-model="this.state.query">
+            <button class="btn btn-primary" @click="searcMovie()">Search</button>
+        </div>
+        <ul>
+            <li v-for="movie in state.movies">
+                <span> Titolo: {{ movie.title }}</span>
+                <span> Titolo originale: {{ movie.original_title }}</span>
+                <span> Lingua: {{ movie.original_language }}</span>
+                <span> Voto: {{ movie.vote_average }}</span>
+            </li>
+        </ul>
+    </div>
+</template>
 
 <style scoped></style>
