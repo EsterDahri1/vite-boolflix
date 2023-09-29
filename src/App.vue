@@ -4,7 +4,8 @@ export default {
     name: 'App',
     data() {
         return {
-            state
+            state,
+            flags: ['de', 'en', 'es', 'fr', 'it']
         }
     },
     methods: {
@@ -30,7 +31,11 @@ export default {
             <li v-for="movie in state.movies">
                 <span> Titolo: {{ movie.title }}</span>
                 <span> Titolo originale: {{ movie.original_title }}</span>
-                <span> Lingua: {{ movie.original_language }}</span>
+                <div v-if="this.flags.includes(movie.original_language)">
+                    Lingua: <img :src="`./assets/img/flags/${movie.original_language}.png`">
+                </div>
+                <span v-else> Lingua: {{ movie.original_language }}</span>
+
                 <span> Voto: {{ movie.vote_average }}</span>
             </li>
         </ul>
