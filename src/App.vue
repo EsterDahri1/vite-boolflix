@@ -26,9 +26,9 @@ export default {
     <div class="container">
         <div class="">
             <input type="search" name="search" id="searchMovie" v-model="this.state.query">
-            <button class="btn btn-primary" @click="searchMovie() && searchTvSeries()">Search</button>
+            <button class="btn btn-primary" @click=" searchTvSeries()">Search</button>
         </div>
-        <ul>
+        <!-- <ul>
             <li v-for="movie in state.movies">
                 <span> Titolo: {{ movie.title }} </span>
                 <span> Titolo originale: {{ movie.original_title }}</span>
@@ -39,6 +39,8 @@ export default {
 
                 <span> Voto: {{ movie.vote_average }}</span>
             </li>
+        </ul> -->
+        <ul>
             <li v-for="tvSerie in state.tvSeries">
                 <span> Titolo: {{ tvSerie.name }} </span>
                 <span> Titolo originale: {{ tvSerie.original_name }}</span>
