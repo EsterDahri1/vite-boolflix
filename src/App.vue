@@ -20,10 +20,10 @@ export default {
 
 <template>
     <div class="container p-2">
-        <form class="d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center">
             <input type="search" class="form-control" id="name" v-model="this.state.movieTitle">
             <button @click="searchMovieByName()" class="ms-3 btn btn-primary">Search</button>
-        </form>
+        </div>
         <ul>
             <li v-for="result in this.state.results">
                 <span>Titolo: {{ result.title }}</span>
