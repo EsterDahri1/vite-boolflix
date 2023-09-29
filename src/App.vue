@@ -10,7 +10,7 @@ export default {
     },
     methods: {
         searcMovie() {
-            const urlMovie = this.state.base_url + this.state.query;
+            const urlMovie = this.state.movie_url + this.state.query;
             this.state.fetchMovie(urlMovie)
         }
     }
