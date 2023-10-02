@@ -22,7 +22,7 @@ export default {
         <AppHeader />
         <div class="container">
 
-            <h2>FILM</h2>
+            <h2 v-if="state.movies != ''">FILM</h2>
             <div class="row row-cols-4">
 
                 <div class="card" v-for="movie in state.movies">
@@ -58,7 +58,7 @@ export default {
             </div>
 
 
-            <h2>SERIE TV</h2>
+            <h2 v-if="state.tvSeries != ''">SERIE TV</h2>
             <div class="row row-cols-4">
                 <div class="card" v-for="tvSerie in state.tvSeries">
                     <img :src="imgUrl + tvSerie.poster_path" alt="" class="img-card-top">
@@ -98,7 +98,11 @@ export default {
 </template>
 
 <style lang="scss">
+@use './assets/scss/partials/variables' as *;
+
 body {
     font-family: 'Netflix Sans';
+    background-color: $bx_dark;
+    color: $bx_light;
 }
 </style>
