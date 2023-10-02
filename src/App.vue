@@ -54,6 +54,7 @@ export default {
                                 </svg>
                             </div>
                         </span>
+                        <span>{{ movie.overview }}</span>
                     </div>
                 </div>
             </div>
@@ -89,6 +90,7 @@ export default {
                                 </svg>
                             </div>
                         </span>
+                        <span>{{ tvSerie.overview }}</span>
                     </div>
                 </div>
             </div>
@@ -110,6 +112,33 @@ body {
         border: none;
         border-radius: none;
         background-color: transparent;
+    }
+
+    .img-card-top {
+        position: relative;
+        height: 100%;
+    }
+
+    .card-body {
+        display: none;
+    }
+
+    .card:hover {
+        svg {
+            fill: yellow;
+        }
+
+        .card-body {
+            position: absolute;
+            width: 307px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.445);
+            color: $bx_light;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+        }
     }
 }
 </style>
