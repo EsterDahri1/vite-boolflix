@@ -4,7 +4,7 @@ export default {
     name: 'Appheader',
     data() {
         return {
-            state
+            state,
         }
     },
     methods: {
@@ -61,7 +61,7 @@ export default {
                         aria-haspopup="true" aria-expanded="false">
                         <img width="50px" class="rounded-2" src="../assets/img/Netflix-avatar.png" alt="">
                     </button>
-                    <div class="dropdown-menu dropdown-menu-left">
+                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
