@@ -26,9 +26,9 @@ export default {
             <h2 v-if="state.movies != ''">FILM</h2>
             <div class="row row-cols-4 g-4">
 
-                <div @mouseover="upHere = true" @mouseleave="upHere = false" class="card" v-for="movie in state.movies">
+                <div class="card" v-for="movie in state.movies">
                     <img :src="imgUrl + movie.poster_path" alt="" class="img-card-top">
-                    <div v-show="upHere" class="card-body">
+                    <div class="card-body">
                         <span> Titolo: {{ movie.title }} </span>
                         <span> Titolo originale: {{ movie.original_title }}</span>
                         <div v-if="this.flags.includes(movie.original_language)">
@@ -63,7 +63,7 @@ export default {
             <div class="row row-cols-4 g-4">
                 <div class="card" v-for="tvSerie in state.tvSeries">
                     <img :src="imgUrl + tvSerie.poster_path" alt="" class="img-card-top">
-                    <div class="card-body" @mouseover="upHere = true" @mouseleave="upHere = false">
+                    <div class="card-body">
                         <span> Titolo: {{ tvSerie.name }} </span>
                         <span> Titolo originale: {{ tvSerie.original_name }}</span>
                         <div v-if="this.flags.includes(tvSerie.original_language)">
